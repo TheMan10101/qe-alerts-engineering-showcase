@@ -1,0 +1,32 @@
+
+name: QE Alerts Python Validation Tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Event Monitor Validation
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Run synthetic event demonstration
+        run: python demo_event_monitor.py
+
+      - name: Run automated unit tests
+        run: python -m unittest discover -v
