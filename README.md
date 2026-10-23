@@ -1,4 +1,6 @@
 # QE Alerts
+[![QE Alerts Python Validation Tests](https://github.com/TheMan10101/qe-alerts-engineering-showcase/actions/workflows/python-tests.yml/badge.svg)](https://github.com/TheMan10101/qe-alerts-engineering-showcase/actions/workflows/python-tests.yml)
+
 ### Python Event Detection | Time-Series Monitoring | Automated Notifications
 
 **Independent Software Engineering Project**
