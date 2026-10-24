@@ -1,4 +1,3 @@
-
 name: QE Alerts Python Validation Tests
 
 on:
@@ -11,22 +10,18 @@ permissions:
 
 jobs:
   test:
-    name: Event Monitor Validation
+    name: Synthetic event monitor validation
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v6
         with:
           persist-credentials: false
-
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-
-      - name: Run synthetic event demonstration
+      - name: Run synthetic demonstration
         run: python demo_event_monitor.py
-
-      - name: Run automated unit tests
+      - name: Run standard-library regression tests
         run: python -m unittest discover -v
